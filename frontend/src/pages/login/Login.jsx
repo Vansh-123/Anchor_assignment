@@ -11,7 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const submitHandler = async () => {
         try {
-            const res = await fetch("http://localhost:5000/auth/signin", {
+            const res = await fetch("https://anchor-assignment-yjos.vercel.app/auth/signin", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

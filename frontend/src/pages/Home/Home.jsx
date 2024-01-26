@@ -917,7 +917,7 @@ const Home = () => {
   }
   const getPosts = async () => {
     try {
-      const res = await fetch('http://localhost:5000/post/topics', {
+      const res = await fetch('hhttps://anchor-assignment-yjos.vercel.app/post/topics', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -963,7 +963,7 @@ const Home = () => {
   const handleSubmit = async () => {
     if (!postInp) return alert('Please enter a topic');
     try {
-      const res = await fetch('http://localhost:5000/post/topics', {
+      const res = await fetch('https://anchor-assignment-yjos.vercel.app/post/topics', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -993,7 +993,7 @@ const Home = () => {
 
   const submitComment = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/post/topics/${id}/comments`, {
+      const res = await fetch(`https://anchor-assignment-yjos.vercel.app/post/topics/${id}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1018,7 +1018,7 @@ const Home = () => {
   const replyComment = async (topicId, commentId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/post/topics/${topicId}/comments/${commentId}/replies`,
+        `https://anchor-assignment-yjos.vercel.app/post/topics/${topicId}/comments/${commentId}/replies`,
         {
           method: 'POST',
           headers: {
