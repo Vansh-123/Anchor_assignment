@@ -11,7 +11,7 @@ const Otp = ({ otp, id, username, email }) => {
             localStorage.setItem("id", id);
             localStorage.setItem("username", username);
             localStorage.setItem("email", email);
-            navigate("/");
+            navigate("/home");
         }
     }
     return (

@@ -29,7 +29,7 @@ const Login = () => {
                 localStorage.setItem("id", data._id)
                 localStorage.setItem("email", data.email)
 
-                navigate("/")
+                navigate("/home")
             }
         }
         catch (err) {
