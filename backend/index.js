@@ -7,9 +7,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-require('dotenv').config()
+require('dotenv').config();
 
-mongoose.connect(process.env.DATABASE_URL, {
+// Use the correct environment variable
+const mongoURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -23,9 +26,11 @@ mongoose.connect(process.env.DATABASE_URL, {
 app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
+
 app.use("/auth", userRoutes);
 app.use("/post", postRoutes);
-const port = process.env.PORT;
+
+const port = process.env.PORT || 5000; // Use a default port if PORT is not set in the environment
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
